@@ -2,7 +2,8 @@ const button = document.getElementById("searchbtn").addEventListener("click",fun
 
 const searchInput= document.getElementById("search-field").value;
 
-//console.log(searchInput);
+
+document.getElementById("search-field").value= "";
 
 let url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
 fetch(url)
@@ -23,8 +24,9 @@ function displayData(meal){
     div.className = ('single-element');
     //console.log(div);
     div.innerHTML = `
-    <h3 id="meal">${user.strMeal}</h3>
+    
     <img src="${user.strMealThumb}" id="img">
+    <h3 id="meal">${user.strMeal}</h3>
     
     `
     mealBox.appendChild(div);
